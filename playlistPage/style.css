@@ -1,0 +1,33 @@
+body {
+
+}
+
+nav {
+  background-color: #9B9B8C;
+}
+
+.bigDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.topDiv {
+  border: solid red;
+  display: flex;
+  flex-direction: row;
+}
+
+.middleDiv {
+  border: solid;
+  
+  width: 90vw;
+  align-self: center;
+}
+
+.bottomDiv {
+  border: solid green;
+}
+
+footer {
+  background-color: #9B9B8C;
+}
