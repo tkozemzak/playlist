@@ -1,9 +1,26 @@
-body {
+@font-face { font-family: Avenir; src: url('/Users/timothykozemzak/Desktop/Q1/playlist/fonts/AvenirNextLTPro-Regular.otf'); }
 
+
+body {
+  width: 100vw;;
+  font-family: Avenir;
+  font-weight: 100;
+  margin: 0;
 }
 
 nav {
+  height: 20vh;
   background-color: #9B9B8C;
+  color: white;
+  display: flex;
+}
+
+.navP {
+  align-self: flex-end;
+  font-size: 36px;
+  font-weight: 100;
+  margin-left: 30px;
+  margin-bottom: 0;
 }
 
 .bigDiv {
@@ -12,22 +29,54 @@ nav {
 }
 
 .topDiv {
-  border: solid red;
+  height: 20vh;
+  /* border: solid red; */
   display: flex;
   flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-left: 4vw;
 }
 
 .middleDiv {
   border: solid;
-  
+  height: 30vh;
   width: 90vw;
   align-self: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .bottomDiv {
-  border: solid green;
+  /* border: solid green; */
+  height: 15vh;
+  padding: 15px;
+}
+
+.clearButton {
+  margin-left: 45px;
+  background-color: #353526;
+  color: white;
+  width: 12vw;
+  height: 5vh;
+  font-size: 20px;
+  font-weight: 100;
+  border-radius: 5%;
+}
+
+.submitBin {
+  background-color: #353526;
+  color: white;
+  width: 12vw;
+  height: 5vh;
+  font-size: 20px;
+  font-weight: 100;
+  border-radius: 5%;
 }
 
 footer {
+  height: 7vh;
   background-color: #9B9B8C;
+  color: white;
+  padding: 10px;
 }
