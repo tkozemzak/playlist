@@ -52,6 +52,13 @@ fetch('https://lit-fortress-6467.herokuapp.com/object')
       let httpRequest = new XMLHttpRequest()
       httpRequest.open('POST', 'https://lit-fortress-6467.herokuapp.com/post', true);
       httpRequest.send(finalPlaylist);
+      httpRequest.onreadystatechange = function()
+        {
+            if (httpRequest.readyState == 4)
+                if (httpRequest.status == 200)
+                console.log(httpRequest)
+        };
+
     })
 
   });
