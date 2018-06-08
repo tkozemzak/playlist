@@ -39,12 +39,14 @@ fetch('https://lit-fortress-6467.herokuapp.com/object')
       }
 
     }
+
     let clearButton = document.querySelector('.clearButton')
     clearButton.addEventListener('click', function() {
       middleDiv.innerText = '';
       finalPlaylist = []
       console.log(finalPlaylist)
     });
+
     let submitButton = document.querySelector('.submitBin')
     submitButton.addEventListener('click', function(){
       let httpRequest = new XMLHttpRequest()
@@ -52,4 +54,4 @@ fetch('https://lit-fortress-6467.herokuapp.com/object')
       httpRequest.send(finalPlaylist);
     })
 
-  })
+  });

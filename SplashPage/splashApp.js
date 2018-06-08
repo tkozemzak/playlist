@@ -8,58 +8,37 @@ function getRandom(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-var randomSoFar = [];
 
 fetch('https://lit-fortress-6467.herokuapp.com/object')
   .then(function(data) {
     return data.json()
   }).then(function(results) {
-    let random = getRandom(0, 4)
+    let random1 = getRandom(0,4)
+    let random2 = getRandom(0,4)
+    let random3 = getRandom(0,4)
 
-    topAlbum.setAttribute('src', '../images/' + results.results[random].cover_art)
-    randomSoFar.push(random)
-    console.log(randomSoFar);
+    topAlbum.setAttribute('src', '../images/' + results.results[random1].cover_art)
 
-
-  })
-
-fetch('https://lit-fortress-6467.herokuapp.com/object')
-  .then(function(data) {
-    return data.json()
-  }).then(function(results) {
-    let random = getRandom(0, 4)
-    randomSoFar.push(random)
-    console.log(randomSoFar);
-    for (let i = 0; i < randomSoFar.length; i++) {
-      if (randomSoFar[i] !== random) {
-        //random = getRandom(0, 4);
-        randomSoFar.push(random)
-
-        middleAlbum.setAttribute('src', '../images/' + results.results[random].cover_art)
-      } else {
-        middleAlbum.setAttribute('src', '../images/' + results.results[random].cover_art)
-      }
-    }
-
-  })
-
-fetch('https://lit-fortress-6467.herokuapp.com/object')
-  .then(function(data) {
-    return data.json()
-  }).then(function(results) {
-    let random = getRandom(0, 4)
-
-    bottomAlbum.setAttribute('src', '../images/' + results.results[random].cover_art)
-
-    randomSoFar.push(random)
-    console.log(randomSoFar);
-    if (randomSoFar.includes(random)) {
-      random = getRandom(0, 4);
-      bottomAlbum.setAttribute('src', '../images/' + results.results[random].cover_art)
+    if (random2 !== random1) {
+      middleAlbum.setAttribute('src', '../images/' + results.results[random2].cover_art)
     } else {
-      bottomAlbum.setAttribute('src', '../images/' + results.results[random].cover_art)
+      for(let i=0; i<5; i++){
+        if(random1 !== i){
+          random2 = i;
+      middleAlbum.setAttribute('src', '../images/' + results.results[random2].cover_art)
     }
-
+  }
+}
+    if (random3 !== random2 && random3 !== random1) {
+      bottomAlbum.setAttribute('src', '../images/' + results.results[random3].cover_art)
+    } else {
+      for(let j=0; j<5; j++){
+        if(random1 !== j && random2 !== j){
+          random3 = j
+      bottomAlbum.setAttribute('src', '../images/' + results.results[random3].cover_art)
+    }
+}
+}
 
 
   })
