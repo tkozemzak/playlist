@@ -49,7 +49,7 @@ fetch('https://lit-fortress-6467.herokuapp.com/object')
     submitButton.addEventListener('click', function(){
       let httpRequest = new XMLHttpRequest()
       httpRequest.open('POST', 'https://lit-fortress-6467.herokuapp.com/post', true);
-      httpRequest.send();
+      httpRequest.send(finalPlaylist);
     })
 
   })
